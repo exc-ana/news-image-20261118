@@ -1,3 +1,7 @@
+[![make.fun](https://make.fun/badge/news-image-20261118.svg)](https://make.fun/bounty/news-image-20261118)
+[![Rank](https://make.fun/badge/news-image-20261118/exc-ana/news-image-20261118/rank.svg)](https://make.fun/bounty/news-image-20261118)
+[![Reward](https://make.fun/badge/news-image-20261118/exc-ana/news-image-20261118/reward.svg)](https://make.fun/bounty/news-image-20261118)
+
 # Sum up 18 November 2026's world news in one image
 
 make.fun bounty entry **program** (not a submission) for account **@exc-ana**.
