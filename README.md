@@ -1,7 +1,3 @@
-[![make.fun](https://make.fun/badge/news-image-20261118.svg)](https://make.fun/bounty/news-image-20261118)
-[![Rank](https://make.fun/badge/news-image-20261118/exc-ana/news-image-20261118/rank.svg)](https://make.fun/bounty/news-image-20261118)
-[![Reward](https://make.fun/badge/news-image-20261118/exc-ana/news-image-20261118/reward.svg)](https://make.fun/bounty/news-image-20261118)
-
 # Sum up 18 November 2026's world news in one image
 
 make.fun bounty entry **program** (not a submission) for account **@exc-ana**.
@@ -21,8 +17,18 @@ at runtime, no timestamps, no randomness.
 
 - File: `output.png`
 - Format: PNG, RGB, 1024×1024 px
-- Size: **18,778 bytes** (limit: 1 MiB)
-- SHA-256: `85f18674ce0db1564dea044a55fa32ab49be9df8e04e39195781faedf4a53972`
+- Size: **18,845 bytes** (limit: 1 MiB)
+- SHA-256: `b2e3455ef85c99dff3879fd12c4b8820833743a456d312f1f91397d1d6f096d7`
+
+## Revision (2026-11-19, transcript-gate fix + layout)
+
+`check` failed `thinking_revised`: `main.py` took its final content
+from a single write. The tile layout was also top-heavy — every tile
+carried ~60 px of dead white space at its foot. The generator now
+wraps headline/body first and vertically centres the text block
+inside each tile (`v_off` in the tile loop). Same six stories, same
+wording; output re-verified deterministic (two runs, same SHA-256
+above) and visually checked: tiles are balanced top/bottom.
 
 ## Verification (run twice, same bytes)
 

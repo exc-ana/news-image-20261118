@@ -187,16 +187,25 @@ for idx, (tag, accent, head, body) in enumerate(STORIES):
     # accent bar
     fill_rect(tx, ty, TILE_W, 10, accent)
     fill_rect(tx, ty + 10, 8, TILE_H - 10, accent)
+    # Wrap first, then vertically centre the whole text block inside
+    # the tile: before this change every tile carried ~60 px of dead
+    # white space at its foot, which read as unfinished at small sizes.
+    head_lines = wrap(head, TILE_W - 48, 3)
+    body_lines = wrap(body, TILE_W - 48, 2)
+    # Block spans tag (ty+26, 14 px tall) to the last body line's foot.
+    block_h = (56 - 26) + len(head_lines) * 26 + 6 \
+        + len(body_lines) * 19 - 5
+    v_off = max(0, (TILE_H - 10 - 16 - block_h) // 2)
     # tag
-    draw_text(tx + 24, ty + 26, tag, 2, accent)
+    draw_text(tx + 24, ty + 26 + v_off, tag, 2, accent)
     # headline, scale 3
-    y = ty + 56
-    for line in wrap(head, TILE_W - 48, 3):
+    y = ty + 56 + v_off
+    for line in head_lines:
         draw_text(tx + 24, y, line, 3, INK)
         y += 26
     # body, scale 2
     y += 6
-    for line in wrap(body, TILE_W - 48, 2):
+    for line in body_lines:
         draw_text(tx + 24, y, line, 2, GREY)
         y += 19
 
